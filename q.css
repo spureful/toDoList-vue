@@ -1,0 +1,13 @@
+.todo__footer-content {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    text-decoration: line-through;
+    
+}
+
+.todo__counter {
+    margin-right: 30px;
+}
