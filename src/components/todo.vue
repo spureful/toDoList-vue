@@ -51,9 +51,9 @@ case 'completed' :
     addTodo(todoname) {
         this.todos.push(todoname)
     },
-        removeTodo(todoID) {
+    removeTodo(todoID) {
       
-            this.todos = this.todos.filter(item => item.id !== todoID);
+       this.todos = this.todos.filter(item => item.id !== todoID);
     }, 
     todoChecked(todo) {
    
@@ -64,10 +64,7 @@ case 'completed' :
         this.filter = filter;
     },
     checkAll(todo) {
-    
-       for (let item of this.todos) {
-           todo.checked === true ? item.checked = true : item.checked = false
-       }
+    this.todos = this.todos.map(x =>({ ...x, checked: todo.checked}));  
     }
   
     

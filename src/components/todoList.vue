@@ -2,6 +2,7 @@
 .todo__list-block
     .todo__list-content
         input(type="checkbox"
+        :checked="isAllTodosChecked"
         @change="checkAll"
         ref="inputAll"
         ).check-all
@@ -45,6 +46,11 @@ export default {
 
     }
   }, 
+  computed: {
+      isAllTodosChecked() {
+        return this.todos.filter(x => x.checked).length === this.todos.length;
+      }
+  },
   methods: {
   removeTodo(todoID) {
     this.$emit('removeTodo', todoID);
